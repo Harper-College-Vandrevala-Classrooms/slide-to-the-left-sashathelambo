@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cassert>
 #include <vector>
+#include <sstream>
 #include "array_shift.h"
 using namespace std;
 
