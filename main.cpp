@@ -133,6 +133,20 @@ int main() {
     }
     cout << "vector_shift tests passed." << endl;
 
+    // Test array_shift_left with char array
+    cout << "\nTesting array_shift_left with char array..." << endl;
+    {
+        char arr1[] = {'a', 'b', 'c', 'd', 'e'};
+        cout << "Initial array: a b c d e" << endl;
+        array_shift_left(reinterpret_cast<int*>(arr1), 5, 1);
+        cout << "After shift left by 1: " << arr1[0] << " " << arr1[1] << " " << arr1[2] << " " << arr1[3] << " " << arr1[4] << endl;
+        assert(arr1[0] == 'b' && arr1[1] == 'c' && arr1[2] == 'd' && arr1[3] == 'e' && arr1[4] == 'a');
+        array_shift_left(reinterpret_cast<int*>(arr1), 5, 1);
+        cout << "After another shift left by 1: " << arr1[0] << " " << arr1[1] << " " << arr1[2] << " " << arr1[3] << " " << arr1[4] << endl;
+        assert(arr1[0] == 'c' && arr1[1] == 'd' && arr1[2] == 'e' && arr1[3] == 'a' && arr1[4] == 'b');
+    }
+    cout << "array_shift_left with char array tests passed." << endl;
+
     cout << "\nAll tests passed!" << endl;
 
     return 0;
