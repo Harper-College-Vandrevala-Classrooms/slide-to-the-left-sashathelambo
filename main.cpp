@@ -5,12 +5,9 @@
 #include "array_shift.h"
 using namespace std;
 
-// Main function to run tests for array and vector shifting functions
 int main() {
-
     cout << "Running tests for array and vector shifting functions..." << endl;
 
-    // Test array_shift_left
     cout << "Testing array_shift_left..." << endl;
     {
         int arr1[] = {1, 2, 3, 4, 5};
@@ -51,7 +48,6 @@ int main() {
     }
     cout << "array_shift_left tests passed." << endl;
 
-    // Test array_shift_right
     cout << "\nTesting array_shift_right..." << endl;
     {
         int arr5[] = {1, 2, 3, 4, 5};
@@ -92,7 +88,6 @@ int main() {
     }
     cout << "array_shift_right tests passed." << endl;
 
-    // Test vector_shift
     cout << "\nTesting vector_shift..." << endl;
     {
         vector<int> vec1 = {1, 2, 3, 4, 5};
@@ -133,15 +128,14 @@ int main() {
     }
     cout << "vector_shift tests passed." << endl;
 
-    // Test array_shift_left with char array
     cout << "\nTesting array_shift_left with char array..." << endl;
     {
         char arr1[] = {'a', 'b', 'c', 'd', 'e'};
         cout << "Initial array: a b c d e" << endl;
-        array_shift_left(reinterpret_cast<int*>(arr1), 5, 1);
+        array_shift_left(arr1, 5, 1);
         cout << "After shift left by 1: " << arr1[0] << " " << arr1[1] << " " << arr1[2] << " " << arr1[3] << " " << arr1[4] << endl;
         assert(arr1[0] == 'b' && arr1[1] == 'c' && arr1[2] == 'd' && arr1[3] == 'e' && arr1[4] == 'a');
-        array_shift_left(reinterpret_cast<int*>(arr1), 5, 1);
+        array_shift_left(arr1, 5, 1);
         cout << "After another shift left by 1: " << arr1[0] << " " << arr1[1] << " " << arr1[2] << " " << arr1[3] << " " << arr1[4] << endl;
         assert(arr1[0] == 'c' && arr1[1] == 'd' && arr1[2] == 'e' && arr1[3] == 'a' && arr1[4] == 'b');
     }
